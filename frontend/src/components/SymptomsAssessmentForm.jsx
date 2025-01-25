@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-
+import { Link, useNavigate } from "react-router-dom";
+import ChatBot from "./ChatBot";
 const SymptomsAssessmentForm = () => {
+  const navigate=useNavigate();
   const [formData, setFormData] = useState({
     symptoms: [],
     startDate: "",
@@ -33,6 +35,7 @@ const SymptomsAssessmentForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
+    navigate("/chat-bot")
   };
 
   const handleClear = () => {
